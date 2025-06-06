@@ -1,0 +1,23 @@
+# DCHapp.py
+import streamlit as st
+
+st.set_page_config(
+    page_title="오이 질병 분석기",
+    page_icon="🥒",
+    layout="wide"
+)
+
+st.title("오이 잎 질병 면적률 계산기 선택")
+st.markdown("분석하고자 하는 질병을 아래에서 선택하세요.")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("⚪ 흰가루병 분석", use_container_width=True):
+        st.switch_page("pages/1_흰가루병_분석.py")
+
+with col2:
+    if st.button("🟡 노균병 분석", use_container_width=True):
+        st.switch_page("pages/2_노균병_분석.py")
+
+st.sidebar.success("분석할 질병을 선택하세요.")
